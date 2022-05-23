@@ -1,0 +1,195 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+:root {
+  --blue: rgba(43, 143, 235, 1);
+  --Darkerblue: rgb(38, 128, 212);
+  --gray: rgb(233, 233, 233);
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(190, 213, 235, 1);
+  font-family: "Poppins", sans-serif;
+}
+
+.gray-container {
+  background-color: var(--gray);
+  height: fit-content;
+  border-radius: 14px;
+  margin: 7.5%;
+  max-width: 400px;
+}
+
+.container {
+  background-color: white;
+  border-radius: 14px;
+  height: fit-content;
+  padding: 15px;
+}
+
+h1 {
+  margin: 0;
+  font-weight: 600;
+  font-size: 24px;
+}
+
+h2 {
+  font-size: 1.3rem;
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+h3 {
+  text-align: center;
+  font-size: 1.7rem;
+  margin: 0;
+}
+
+label {
+  font-weight: 300;
+}
+
+.field {
+  background-color: var(--gray);
+  height: 40px;
+  border-radius: 10px;
+  border-style: hidden;
+  padding: 0px 8px;
+}
+
+.field:focus {
+  outline: none;
+}
+
+.wrapper {
+  display: inline-flex;
+  background: var(--gray);
+  height: 40px;
+  width: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 10px;
+}
+
+.wrapper .option {
+  font-size: 16px;
+  font-weight: 300;
+  height: 40px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+#male:checked:checked ~ .male,
+#female:checked:checked ~ .female {
+  background: var(--blue);
+}
+
+.wrapper .option span {
+  color: #000000;
+}
+#male:checked:checked ~ .male span,
+#female:checked:checked ~ .female span {
+  color: #fff;
+}
+
+.age-length-container .field {
+  width: 100%;
+}
+
+.age-length-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 94%;
+}
+
+.age-length-container .input-container {
+  max-width: 44%;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  margin-bottom: 15px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  position: relative;
+  top: 35px;
+  background-color: var(--blue);
+  border-style: hidden;
+  font-family: inherit;
+  height: 40px;
+  padding: 0px 38px;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--Darkerblue);
+}
+
+.result {
+  margin: 25px;
+  margin-top: 40px;
+}
+
+select {
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  padding: 0 1em 0 0;
+  margin: 0;
+  width: 100%;
+  font-family: inherit;
+  font-size: 0.8rem;
+  cursor: inherit;
+  line-height: inherit;
+  outline: none;
+}
+
+.select {
+  display: grid;
+  grid-template-areas: "select";
+  align-items: center;
+  padding: 0 0.5em;
+}
+
+.select::after {
+  content: "";
+  width: 0.8em;
+  height: 0.5em;
+  background-color: gray;
+  clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+  justify-self: end;
+}
+
+select,
+.select:after {
+  grid-area: select;
+}
