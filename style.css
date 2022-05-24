@@ -44,6 +44,7 @@ body {
 
 h1 {
   margin: 0;
+  margin-bottom: 5px;
   font-weight: 600;
   font-size: 24px;
 }
@@ -74,6 +75,7 @@ label {
   padding: 0px 10px;
   display: flex;
   justify-content: center;
+  margin-top: 5px;
 }
 
 .field:hover {
@@ -111,6 +113,7 @@ input {
   border-radius: 10px;
   margin-bottom: 15px;
   font-size: 1rem;
+  margin-top: 5px;
 }
 
 .wrapper .option {
@@ -213,6 +216,7 @@ select {
   grid-template-areas: "select";
   align-items: center;
   padding: 0 0.5em;
+  margin-bottom: 0;
 }
 
 .select::after {
