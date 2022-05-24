@@ -236,7 +236,7 @@ select,
 #error {
   position: absolute;
   text-align: center;
-  transform: translate(0px, -16px);
+  transform: translate(0px, -10px);
   font-weight: 300;
   font-size: 0.9rem;
   color: rgb(255, 64, 64);

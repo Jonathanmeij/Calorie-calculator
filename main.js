@@ -55,6 +55,11 @@ const validation = (data) => {
     hasError = true;
   };
 
+  const setNotNumber = (fieldName) => {
+    error.innerHTML = `${fieldName} can only be a number`;
+    hasError = true;
+  };
+
   if (age == "" || age == null) {
     setError("Age");
   }
@@ -73,6 +78,16 @@ const validation = (data) => {
   }
   if (weight < 0 || weight > 400) {
     setRangeError("Weight", 0, 400);
+  }
+
+  if (isNaN(age)) {
+    setNotNumber("Age");
+  }
+  if (isNaN(length)) {
+    setNotNumber("Length");
+  }
+  if (isNaN(weight)) {
+    setNotNumber("Weight");
   }
 
   return !hasError;
