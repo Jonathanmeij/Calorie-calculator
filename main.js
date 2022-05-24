@@ -9,16 +9,25 @@
 
 const button = document.getElementById("btn");
 const h = document.getElementById("calories");
+const error = document.getElementById("error");
 
 button.onclick = () => {
   const isMale =
     document.querySelector('input[name="gender"]:checked').id == "male";
-
   const age = document.getElementById("age").value;
   const length = document.getElementById("length").value;
   const weight = document.getElementById("weight").value;
   const activity = document.getElementById("activity").value;
 
+  const data = [isMale, age, length, weight, activity];
+
+  if (validation(data)) {
+    caloriesCalc(data);
+  }
+};
+
+const caloriesCalc = (data) => {
+  const [isMale, age, length, weight, activity] = data;
   let calories;
 
   if (isMale) {
@@ -30,4 +39,43 @@ button.onclick = () => {
   calories *= activity;
   h.innerHTML = Math.round(calories);
 };
-ad;
+
+const validation = (data) => {
+  const [isMale, age, length, weight, activity] = data;
+  let hasError = false;
+  error.innerHTML = "";
+
+  const setError = (fieldName) => {
+    error.innerHTML = fieldName + " is not defined";
+    hasError = true;
+  };
+
+  const setRangeError = (fieldName, min, max) => {
+    error.innerHTML = `${fieldName} can only be between ${min} and ${max}`;
+    hasError = true;
+  };
+
+  if (age == "" || age == null) {
+    setError("Age");
+  }
+  if (length == "" || age == null) {
+    setError("Length");
+  }
+  if (weight == "" || weight == null) {
+    setError("Weight");
+  }
+
+  if (age < 0 || age > 200) {
+    setRangeError("Age", 0, 200);
+  }
+  if (length < 0 || length > 400) {
+    setRangeError("Length", 0, 400);
+  }
+  if (weight < 0 || weight > 400) {
+    setRangeError("Weight", 0, 400);
+  }
+
+  return !hasError;
+};
+
+//validation

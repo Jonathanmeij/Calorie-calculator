@@ -27,20 +27,28 @@
                     </div>
                     
                     <div class="age-length-container">
-                        <div class="input-container input ">
+                        <div class="label-input-container">
                             <label>Age</label>
-                            <input class="field" type="text" id="age">
+                            <div class="input-container input field">
+                                <label class="inner-label">Years</label>
+                                <input class="" type="text" id="age">
+                            </div>
                         </div>
             
-                        <div class="input-container">
+                        <div class="label-input-container">
                             <label>Length</label>
-                            <input class="field" type="text" id="length">
+                            <div class="input-container field">
+                                <label class="inner-label">Centimeters</label>
+                                <input class="" type="text" id="length">
+                            </div>
                         </div>
+
                     </div>
         
-                    <div class="input-container input">
-                        <label>Weight</label>
-                        <input class="field" type="text" id="weight">
+                    <label>Weight</label>
+                    <div class="input-container field">
+                        <label class="inner-label">Kilos</label>
+                        <input class="" type="text" id="weight">
                     </div>
         
                     <div class="input-container">
@@ -54,10 +62,13 @@
                             <option value="1.9">Very active</option>
                         </select>
                     </div>
-                    </div>
                                  
                 </form>
+                
+                </div>
+                
                 <div class="button-container">
+                    <p id="error"></p>
                     <button id="btn">Calculate</button> 
                 </div> 
             </div>
@@ -76,10 +87,6 @@
     Moderately active (exercise 3–5 days/week): AMR = BMR x 1.55
     Active (exercise 6–7 days/week): AMR = BMR x 1.725
     Very active (hard exercise 6–7 days/week): AMR = BMR x 1.9 -->
-    
-    <div class="makeover">
-        <div class="class"></div>
-    </div>
 
     <script src="main.js"></script>
 </body>
